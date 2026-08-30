@@ -43,7 +43,6 @@ Cross-model comparison example:
 ```powershell
 python "Cross-models comparision\cross_model_inference_example.py"
 ```
-Due to the large file size, the datasets are available at: https://cloud.tsinghua.edu.cn/d/cca73bc3fd8c433cb1fc/
 
 In Jupyter, Spyder, or VS Code, you can run the scripts section by section using the # %% markers, or copy each section directly into a Notebook. Both Oracle scripts use canonical index 22010 by default. The available demonstration samples are 3500, 8000, and 22010
 
