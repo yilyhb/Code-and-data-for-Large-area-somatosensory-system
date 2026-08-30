@@ -1,0 +1,212 @@
+{
+  "dataset_name": "formal_test_balanced1000_hex16",
+  "sample_count": 1000,
+  "source": {
+    "formal_test_split": "Popsama_projects_audit/datasets/splits/test",
+    "source_sample_count": 3600,
+    "frozen_split": "E7/splits/fixed_stratified_seed20260714.npz:test",
+    "source_canonical_indices_content_sha256": "a86d869e8b2dbb7003856195245265cfac9ca6315c4c134e1c26c2a182978c85"
+  },
+  "selection": {
+    "seed": 11,
+    "rng": "numpy.random.default_rng (PCG64)",
+    "without_replacement": true,
+    "per_scenario": 125,
+    "scenario_iteration_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "final_order": "ascending original formal-test row",
+    "selected_original_test_rows_content_sha256": "5184ce92b938515890cf00929976816a212ddb6e9eb58563cd9df18720689b8f"
+  },
+  "scenario_names": {
+    "0": "null",
+    "1": "external_only",
+    "2": "internal_only",
+    "3": "pose_only",
+    "4": "external_internal",
+    "5": "external_pose",
+    "6": "internal_pose",
+    "7": "full_mixed"
+  },
+  "scenario_counts": {
+    "0": 125,
+    "1": 125,
+    "2": 125,
+    "3": 125,
+    "4": 125,
+    "5": 125,
+    "6": 125,
+    "7": 125
+  },
+  "spatial_processing": {
+    "arrays": [
+      "input_map1",
+      "input_map2",
+      "target_ext_map1",
+      "target_ext_map2",
+      "target_int_map1",
+      "target_int_map2"
+    ],
+    "source_layout": "NHWC float32",
+    "source_shape_per_sample": [
+      32,
+      32,
+      3
+    ],
+    "output_shape_per_sample": [
+      16,
+      16,
+      3
+    ],
+    "geometry_source": "Datasets/plot_function_unified.py -> plot_function_hex._build_inscribed_hex_grid",
+    "processing_order": [
+      "apply 32x32 hard hexagonal zero mask",
+      "per-channel bilinear downsample from 32x32 to 16x16",
+      "apply 16x16 hard hexagonal zero mask"
+    ],
+    "bilinear_convention": {
+      "implementation": "torch.nn.functional.interpolate",
+      "mode": "bilinear",
+      "align_corners": false,
+      "antialias": false
+    },
+    "even_grid_policy": "drop_high",
+    "valid_hexagonal_cells_16x16": 169,
+    "outside_mask_value": 0.0
+  },
+  "files": {
+    "canonical_indices.npy": {
+      "shape": [
+        1000
+      ],
+      "dtype": "int64",
+      "bytes": 8128,
+      "sha256": "758f784508d5f738a3923e9ec9e9ae2e4775a24d9c7b689bd8c2d04176218055"
+    },
+    "force_label3.npy": {
+      "shape": [
+        1000,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 12128,
+      "sha256": "776cbf53b2f51be80a1906c7e62a0a502b9e716e549354c5ed7bf5198b4159aa"
+    },
+    "imu_raw6.npy": {
+      "shape": [
+        1000,
+        6
+      ],
+      "dtype": "float32",
+      "bytes": 24128,
+      "sha256": "9821cb0c52c11c85133c306b85d4c052f07517db92dcb5e08cd891bedee11936"
+    },
+    "input_map1.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "adfef4a3b9bbe2452d04cc69802dc229d3b6ad6503756c561090fbd0e2111f82"
+    },
+    "input_map2.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "7a2c8b84960083b3849973e51f9827a8ed2f3a4a4ac7122c097f1126dd13f26b"
+    },
+    "pose_angle3.npy": {
+      "shape": [
+        1000,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 12128,
+      "sha256": "5d079b10227c3e1332d13b4af4da76baafcdd3d8ca422eabb753ad2109c432bc"
+    },
+    "sample_id.npy": {
+      "shape": [
+        1000
+      ],
+      "dtype": "int64",
+      "bytes": 8128,
+      "sha256": "758f784508d5f738a3923e9ec9e9ae2e4775a24d9c7b689bd8c2d04176218055"
+    },
+    "scenario_id.npy": {
+      "shape": [
+        1000
+      ],
+      "dtype": "int8",
+      "bytes": 1128,
+      "sha256": "2d6666d5581d6a4ab045cc4dad05513ce6cb06cd38f7f78eb0b961ba39ff0e65"
+    },
+    "source_mask.npy": {
+      "shape": [
+        1000,
+        3
+      ],
+      "dtype": "int8",
+      "bytes": 3128,
+      "sha256": "cb8f5f9ac46cc415ae4606428abf93a43e79712b2f0d2237cbda45a1dc4995d1"
+    },
+    "target_ext_map1.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "5ffb5ddad206eeb4cc4091662d2bcb8a0cac4cf8daf2130663a0ae8d2b975104"
+    },
+    "target_ext_map2.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "a2dd6d16c4b99408cdc1c3f47d2ede42398dc59ff170359b4a86619f60883b50"
+    },
+    "target_int_map1.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "c49d708345d1ae1414366bb696dd22349391b893369d25a5b8071733f12d4224"
+    },
+    "target_int_map2.npy": {
+      "shape": [
+        1000,
+        16,
+        16,
+        3
+      ],
+      "dtype": "float32",
+      "bytes": 3072128,
+      "sha256": "b2c1c538a6848db9129690207854c881c6fff00bd7cc17837b0148951d79b541"
+    }
+  }
+}
